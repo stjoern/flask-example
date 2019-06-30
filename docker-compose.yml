@@ -1,0 +1,11 @@
+web:
+  build: .
+  command: python -u run.py
+  ports:
+    - "8000:9999"
+  volumes:
+    - .:/code
+  links:
+    - db
+db:
+  image: mongo:3.6.13
